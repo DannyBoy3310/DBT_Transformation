@@ -28,6 +28,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   ELT_data_engg:
     # Config indicated by + and applies to all files under models/example/
-    ORALCE:
+    ORACLE:
       +materialized: table
+      file_format: json
+      location_root: '/workspaces/DBT_Transformation/DATAMART/'
+      DIMENSTIONS:
+        +schema: dimensions
+      FACTS:
+        +schema: facts
+      
+
       

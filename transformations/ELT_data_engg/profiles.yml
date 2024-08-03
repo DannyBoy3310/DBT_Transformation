@@ -4,7 +4,8 @@ ELT_data_engg:
       host: codespaces-60e6c0
       port: 4040
       method: session
-      schema: main
+      database: main
+      schema: main  
       threads: 5
       type: spark
   target: dev
