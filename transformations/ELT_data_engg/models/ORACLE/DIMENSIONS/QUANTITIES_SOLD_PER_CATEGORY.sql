@@ -4,4 +4,8 @@
     from {{ source('main', 'product_summary')}} A 
     inner join {{ source('main', 'product_sales') }} B
     on A.item_code = B.item_code 
+    {% if var('filter_name', '') != '' %}
+        where lower(A.category_name) = '{{ "%s" | format(var('filter_name') | lower ) }}'
+    {% endif %}
     group by A.category_code, A.category_name
+    

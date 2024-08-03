@@ -30,8 +30,9 @@ models:
     # Config indicated by + and applies to all files under models/example/
     ORACLE:
       +materialized: table
-      file_format: json
-      location_root: '/workspaces/DBT_Transformation/DATAMART/'
+      file_format: '{{ var("file_format", "csv") }}'
+      location_root: '/workspaces/DBT_Transformation/transformations/DATAMART/'
+      pre_hook: ['SET spark.sql.legacy.allowNonEmptyLocationInCTAS=true']
       DIMENSTIONS:
         +schema: dimensions
       FACTS:
