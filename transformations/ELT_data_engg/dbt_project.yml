@@ -28,6 +28,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   ELT_data_engg:
     # Config indicated by + and applies to all files under models/example/
-    ORALCE:
+    ORACLE:
       +materialized: table
+      file_format: '{{ var("file_format", "csv") }}'
+      location_root: '/workspaces/DBT_Transformation/transformations/DATAMART/'
+      pre_hook: ['SET spark.sql.legacy.allowNonEmptyLocationInCTAS=true']
+      DIMENSTIONS:
+        +schema: dimensions
+      FACTS:
+        +schema: facts
+      
+
       

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: main
+    schema: main
+    tables:
+      - name: product_summary
+      - name: product_sales
+      - name: product_wholesale
