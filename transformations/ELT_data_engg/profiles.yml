@@ -1,26 +1,11 @@
 ELT_data_engg:
   outputs:
     dev:
-      host: localhost
-      password: Daniel12345
-      port: 1530
-      protocol: tcp
+      host: codespaces-60e6c0
+      port: 4040
+      method: session
       schema: main
-      service: daniel.oracle.services.edu
       threads: 5
-      type: oracle
-      user: admin_de
+      type: spark
   target: dev
-transformations_data_engg:
-  outputs:
-    dev:
-      host: localhost
-      password: Daniel12345
-      port: 1531
-      protocol: tcp
-      schema: main
-      service: abc
-      threads: 3
-      type: oracle
-      user: admin_de
-  target: dev
+
